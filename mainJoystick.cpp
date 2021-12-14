@@ -85,16 +85,11 @@ static char *print_double(char* str, double v, int decimalDigits=2)
   return str;
 }
 
-//returns mgValue in Degree: y = 0,09 * x 
-int32_t getDegree(int32_t mgValue)	{	
-	return 0.09*mgValue;
-}
-
-    /* Simple main function */
-    int main() {
+/* Simple main function */
+int main() {
       int32_t axes[3];
       acc_gyro->get_x_axes(axes);
-      int32_t gravitation = sqrt( pow(axes[0],2) + pow(axes[1],2) );  
+      double gravitation = sqrt( pow((double)axes[0],2) + pow((double)axes[1],2) + pow((double)axes[2], 2));  
       
       /* Enable all sensors */
       hum_temp->enable();
@@ -106,9 +101,9 @@ int32_t getDegree(int32_t mgValue)	{
     
       while(1) {
         acc_gyro->get_x_axes(axes);		
-        printf("X:%d;\tY:%d\r\n", 90/(axes[0]/gravitation), 90/(axes[1]/gravitation));
+        printf("X:%2.f;\tY:%2.f\r\n", 90*(axes[0]/gravitation), 90*(axes[1]/gravitation));
         wait(0.33);
-      }
-    }
+      }      
+}
 
 	
