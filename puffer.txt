@@ -91,7 +91,7 @@ int main() {
 	
 	//Puffer
 	static const int pSize = 1024;
-  int32_t puffer[12][pSize];
+  int32_t puffer[pSize][12]; //Zeile, Spalte, ...
 	
   int32_t axes[3];
   
@@ -103,18 +103,6 @@ int main() {
   acc_gyro->enable_x();
   acc_gyro->enable_g();
 	
-	hum_temp->read_id(&id);
-  //printf("HTS221  humidity & temperature    = 0x%X\r\n", id);
-  press_temp->read_id(&id);
-  //printf("LPS22HB  pressure & temperature   = 0x%X\r\n", id);
-  magnetometer->read_id(&id);
-  //printf("LSM303AGR magnetometer            = 0x%X\r\n", id);
-  accelerometer->read_id(&id);
-  //printf("LSM303AGR accelerometer           = 0x%X\r\n", id);
-  acc_gyro->read_id(&id);
-  //printf("LSM6DSL accelerometer & gyroscope = 0x%X\r\n", id);
-	
- 
   while(1) {   
 		
 		for(int j = 0; j < pSize; j++)	{
