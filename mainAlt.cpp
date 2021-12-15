@@ -131,13 +131,13 @@ int main() {
     //printf("LSM303AGR [mag/mgauss]:  %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
 		
 		for(int i = 0; i < 3; i++)	{
-			printf("%d;\t", axes[i]);
+			printf("%d\t", axes[i]);
 		}
     
     accelerometer->get_x_axes(axes);
 		
 		for(int i = 0; i < 3; i++)	{
-			printf("%d;\t", axes[i]);
+			printf("%d\t", axes[i]);
 		}
 		
     //printf("LSM303AGR [acc/mg]:  %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
@@ -146,14 +146,14 @@ int main() {
     //printf("LSM6DSL [acc/mg]:      %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
 		
 		for(int i = 0; i < 3; i++)	{
-			printf("%d;\t", axes[i]);
+			printf("%d\t", axes[i]);
 		}
 
     acc_gyro->get_g_axes(axes);
     //printf("LSM6DSL [gyro/mdps]:   %6ld, %6ld, %6ld\r\n", axes[0], axes[1], axes[2]);
 		
 		for(int i = 0; i < 3; i++)	{
-			printf("%d;\t", axes[i]);
+			printf("%d\t", axes[i]);
 		}
 
 		printf("\r\n");

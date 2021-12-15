@@ -89,14 +89,13 @@ static char *print_double(char* str, double v, int decimalDigits=2)
 int main() {
   uint8_t id;
 	
+//Puffer
+static const int pSize = 1024;
+int32_t puffer[pSize][12]; //Zeile, Spalte, ...
 	
-	//Puffer
-	static const int pSize = 1024;
-  int32_t puffer[pSize][12]; //Zeile, Spalte, ...
-	
-	//zeitPuffer Spalte1: zeitDifferenz, Spalte2: Differenz zum vorherigen
-	int zeitPuffer[pSize][2];
-	zeitPuffer[0][1] = 0;
+//zeitPuffer Spalte1: zeitDifferenz, Spalte2: Differenz zum vorherigen
+int zeitPuffer[pSize][2];
+zeitPuffer[0][1] = 0;
 	
   int32_t axes[3];
   
